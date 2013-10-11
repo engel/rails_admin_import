@@ -322,7 +322,7 @@ module RailsAdminImport
         #   lookup_field_name = params[:update_lookup].to_sym
         # end
 
-        if lookup_field_name && !map.has_key?(lookup_field_name)
+        if !lookup_field_name.blank? && !map.has_key?(lookup_field_name)
           return results = { 
             :success => [], 
             :error => [
